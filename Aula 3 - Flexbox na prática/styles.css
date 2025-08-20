@@ -82,10 +82,17 @@ body {
 /* Header */
 
 .c-header {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  justify-content: flex-end;
   background: var(--brand-color);
 }
 
 .c-logo {
+  display: flex;
+  justify-content: flex-start;
   font-size: 20px;
   font-weight: bold;
   
@@ -95,6 +102,14 @@ body {
 }
 
 .c-header__nav {
+  display: flex;
+  flex: 1 1 10em;
+  justify-content: flex-end;
+  border-right: #5a5a5a;
+  ul:last-child::after{
+    content: "|";
+  }
+
   
   li {
     display: inline-block;
@@ -102,14 +117,15 @@ body {
 }
 
 .c-header__nav a, .c-user___options a {
-
     padding: 8px;
     color: #fff;
 
 }
 
 .c-user {
-  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   & img {
     width: 40px;
     height: 40px;
@@ -121,10 +137,18 @@ body {
 /* Conteúdo Principal */
 
 .wrapper {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 aside {
-
+  display: flex;
+  flex-basis: 20%;
+  flex-direction: column;
+  height: 500px;
     & li{
       padding: 0.5rem 0;
       cursor: pointer;
@@ -136,10 +160,13 @@ aside {
         font-weight: 700;
       }
     }
+    footer{
+      
+    }
   }    
 
 main {
-
+  flex-grow: 1;
   & i{
     margin: .5em;
   }
@@ -158,12 +185,17 @@ aside,
 /* Top Sellers */
 .top-sellers {
     margin-top: 1rem;
-    
+    display: flex;
+    flex-wrap: wrap;
+    & li{
+      flex-basis: 25%;
+    }
 }
 
 .c-seller {
   margin-bottom: 2rem;
-  
+  display: flex;
+  flex-direction: row;
   h3 {
     font-weight: bold;
     color: #5a5a5a;
@@ -189,18 +221,22 @@ aside,
 /* Articles */
 
 .articles-wrapper {
-  
+  display: flex;
+  flex-wrap: wrap;
+      & li{
+      flex-basis: 50%;
+    }
 }
 
 .c-article {
-  
+
   @media (max-width: 699px) {
     margin-bottom: 1rem;
   }
   
   & a {
     color: #5a5a5a;
-    
+    display: flex;
   }
   
   & img {
@@ -228,19 +264,24 @@ aside,
 
 /* Latest Articles */
 .latest-section{
+  margin: 30px 0;
 }
 
 .search-bar {
+  display: flex;
+  flex-direction: row;
   margin: 1rem 0;
 }
 
 .search-bar input {
+  flex-grow: 2;
   padding: 0.5rem 1rem;
   border-radius: 999px;
   border: 1px solid #ccc;
 }
 
 .search-bar button {
+  flex-grow: 0;
   padding: 0.5rem 1rem;
   background-color: #2563eb;
   color: white;
@@ -254,9 +295,12 @@ aside,
 }
 
 .c-article.stacked {
-  
+  display: flex;
   img {
     height: 150px;
     margin-bottom: 0.5rem;
+  }
+  a{
+    
   }
 }
